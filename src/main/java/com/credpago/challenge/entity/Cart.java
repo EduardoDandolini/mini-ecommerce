@@ -35,7 +35,7 @@ public class Cart implements Serializable {
 
     private String time;
 
-    public void addProducts(List<Product> products){
+    public void addProducts(List<Product> products) {
         this.products.addAll(products);
     }
 }
