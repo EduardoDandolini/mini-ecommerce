@@ -34,4 +34,8 @@ public class Cart implements Serializable {
     private String date;
 
     private String time;
+
+    public void addProducts(List<Product> products){
+        this.products.addAll(products);
+    }
 }
