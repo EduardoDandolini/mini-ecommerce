@@ -18,7 +18,7 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     @Transactional(rollbackFor = Exception.class)
-    public Product addProduct(ProductDTO dto) {
+    public Product createProduct(ProductDTO dto) {
         return productRepository.save(Product.builder()
                 .productId(UUID.randomUUID().toString())
                 .album(dto.album())
