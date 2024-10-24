@@ -1,9 +1,9 @@
 package com.credpago.challenge.controller.impl;
 
-import com.credpago.challenge.controller.ClientController;
-import com.credpago.challenge.dto.ClientDTO;
-import com.credpago.challenge.entity.Client;
-import com.credpago.challenge.service.ClientService;
+import com.credpago.challenge.controller.CartController;
+import com.credpago.challenge.dto.CartDTO;
+import com.credpago.challenge.entity.Cart;
+import com.credpago.challenge.service.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/store/api/v1")
 @RequiredArgsConstructor
-public class ClientControllerImpl implements ClientController {
+public class CartControllerImpl implements CartController {
 
-    private final ClientService service;
+    private final CartService cartService;
+
 
     @Override
-    @PostMapping("/client")
-    public ResponseEntity<Client> createClient(@RequestBody ClientDTO dto) {
-        return ResponseEntity.ok(service.createClient(dto));
+    @PostMapping("/add_to_cart")
+    public ResponseEntity<Cart> addProductsToCart(@RequestBody CartDTO dto) {
+        return ResponseEntity.ok(cartService.addProductsToCard(dto));
     }
 }

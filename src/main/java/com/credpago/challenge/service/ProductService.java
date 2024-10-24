@@ -27,6 +27,7 @@ public class ProductService {
                 .store(dto.store())
                 .thumb(dto.thumb())
                 .year(dto.year())
+                .reference(dto.reference())
                 .build());
     }
 
@@ -46,7 +47,8 @@ public class ProductService {
                 product.getPrice(),
                 product.getStore(),
                 product.getThumb(),
-                product.getDate()
+                product.getDate(),
+                product.getReference()
         );
     }
 }

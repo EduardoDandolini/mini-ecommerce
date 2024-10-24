@@ -1,12 +1,12 @@
 package com.credpago.challenge.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.br.CPF;
 
 import java.io.Serializable;
 
@@ -22,5 +22,6 @@ public class Client implements Serializable {
 
     private String name;
 
+    @Column(unique = true)
     private String cpf;
 }

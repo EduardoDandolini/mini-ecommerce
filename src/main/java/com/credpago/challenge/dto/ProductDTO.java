@@ -4,9 +4,10 @@ public record ProductDTO(
         String artist,
         Integer year,
         String album,
-        Integer price,
+        Double price,
         String store,
         String thumb,
-        String date
+        String date,
+        String reference
 ) {
 }

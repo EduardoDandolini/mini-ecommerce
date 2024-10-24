@@ -22,7 +22,11 @@ public class Transaction implements Serializable {
     @JoinColumn(name = "client_id")
     private Client clientId;
 
-    private Integer totalToPay;
+    @ManyToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
+
+    private Double totalToPay;
 
     @ManyToOne
     @JoinColumn(name = "credit_card_Id")

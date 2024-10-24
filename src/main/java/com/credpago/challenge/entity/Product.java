@@ -1,9 +1,6 @@
 package com.credpago.challenge.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,13 +25,16 @@ public class Product implements Serializable {
 
     private String album;
 
-    private Integer price;
+    private Double price;
 
     private String store;
 
     private String thumb;
 
     private String date;
+
+    @Column(unique = true)
+    private String reference;
 
     @ManyToMany(mappedBy = "products")
     private List<Cart> carts;
